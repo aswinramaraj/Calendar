@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dark: #111110;
+  --color-offwhite: #F7F5F0;
+  --color-brandOrange: #E8631A;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+body {
+  background-color: var(--color-offwhite);
+}
+
+
+/* Custom React Big Calendar Overrides */
+.rbc-calendar {
+  font-family: var(--font-sans);
+}
+.rbc-month-view {
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.rbc-header {
+  padding: 10px 0;
+  font-weight: 600;
+  color: #4b5563;
+  border-bottom: 1px solid #e5e7eb;
+}
+.rbc-today {
+  background-color: #fff7ed !important; /* Subtle orange tint for today */
+}
+.rbc-off-range-bg {
+  background-color: #f9fafb;
+}
+.rbc-event {
+  transition: transform 0.1s ease;
+}
+.rbc-event:hover {
+  transform: scale(1.02);
+}
