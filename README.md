@@ -23,3 +23,24 @@ The **MyDates Ecosystem** is a fully decoupled, production-grade scheduling and 
 ---
 
 ## 🧱 Data & Communication Flow
+
+┌────────────────────────┐
+ │   React Web Frontend   │  ◄── Host State: Vercel Cloud
+ │     (Tailwind v4)      │
+ └───────────┬────────────┘
+             │ (Secure HTTPS Axios REST Handshake)
+             ▼
+ ┌────────────────────────┐
+ │   Node.js / Express    │  ◄── Live Deployment: Render Cloud
+ │        API Server      │
+ └─────┬────────────┬─────┘
+       │            │
+Mongoose │            │ (6:00 AM Cron Automation Loop)
+Queries  │            ▼
+▼   ┌──────────────────────────────────────────────┐
+┌───────────┐ │            Cross-Modal Delivery              │
+│  MongoDB  │ │  ├─► Twilio Webhook ──► WhatsApp Device Alert │
+│  Atlas    │ │  └─► Nodemailer SMTP ──► Email Inbox Digest  │
+└───────────┘
+
+
